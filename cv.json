@@ -1,0 +1,167 @@
+{
+  "personal_info": {
+    "full_name": "Pedro Joaquin Cannavo",
+    "first_name": "Pedro",
+    "last_name": "Cannavo",
+    "location": "Vicente López, Buenos Aires, Argentina",
+    "phone": "+54 11 7614 6414",
+    "email": "joacocannavo1@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/pedro-joaquin-cannavo-1b0b4b1b6/",
+    "drivers_license": true,
+    "date_of_birth": "1999-02-10",
+    "nationality": "Argentine"
+  },
+
+  "profile": "Biomedical Engineering student at Universidad Nacional de San Martin (UNSAM) with a prior background in Medicine and hands-on work experience in Argentina and New Zealand. Proactive, adaptable, and a fast learner with strong interest in technical environments, systems, and problem-solving. Seeking an internship to apply engineering knowledge and continue developing professionally in the field.",
+
+  "education": [
+    {
+      "degree": "Bachelor of Engineering in Biomedical Engineering",
+      "short_name": "Biomedical Engineering",
+      "institution": "Universidad Nacional de San Martin (UNSAM)",
+      "start_year": "2022",
+      "end_year": "Present",
+      "period": "2022 - Present",
+      "year": "Third Year",
+      "location": "Buenos Aires, Argentina"
+    },
+    {
+      "degree": "Medicine",
+      "institution": "University of Buenos Aires (UBA)",
+      "start_year": "2019",
+      "end_year": "2022",
+      "period": "2019 - 2022",
+      "location": "Buenos Aires, Argentina"
+    },
+    {
+      "degree": "Bilingual Secondary Education",
+      "institution": "Pedro Poveda Bilingual School",
+      "location": "Buenos Aires, Argentina"
+    }
+  ],
+
+  "experience": [
+    {
+      "role": "Plant Operator",
+      "company": "Seeka",
+      "location": "New Zealand",
+      "start_date": "2026-03-01",
+      "end_date": "2026-06-01",
+      "period": "2026",
+      "still_working": false,
+      "tasks": [
+        "Operated and monitored key machinery in the production process",
+        "Tracked incoming fruit bins to maintain a consistent and organized workflow",
+        "Troubleshot operational issues in real time, including blockages, mechanical faults, and manual adjustments",
+        "Performed routine cleaning and maintenance of production equipment"
+      ],
+      "skills_gained": [
+        "Technical troubleshooting",
+        "Equipment operation and maintenance",
+        "Process monitoring",
+        "Problem solving",
+        "Adaptability"
+      ]
+    },
+    {
+      "role": "Bartender",
+      "company": "The Springs Tavern",
+      "location": "New Zealand",
+      "start_date": "2025-08-01",
+      "end_date": "2026-02-01",
+      "period": "2025 - 2026",
+      "still_working": false,
+      "tasks": [
+        "Delivered customer service in English within a fast-paced hospitality environment",
+        "Maintained service quality and composure while working under pressure",
+        "Strengthened communication skills and English language proficiency through daily client interaction"
+      ],
+      "skills_gained": [
+        "Customer service under pressure",
+        "Bilingual communication",
+        "Teamwork",
+        "Adaptability"
+      ]
+    },
+    {
+      "role": "Shift Supervisor / Customer Service",
+      "company": "Split / Faricci Ice Cream Shop",
+      "location": "Argentina",
+      "start_date": "2019-10-01",
+      "end_date": "2025-03-01",
+      "period": "2019 - 2025",
+      "still_working": false,
+      "tasks": [
+        "Managed customer service, cash handling, and daily store operations",
+        "Supervised staff and trained new employees",
+        "Developed leadership, organizational, and decision-making skills"
+      ],
+      "skills_gained": [
+        "Leadership",
+        "Staff training",
+        "Organization",
+        "Decision making",
+        "Customer service"
+      ]
+    },
+    {
+      "role": "Administrative Assistant",
+      "company": "Altana Films",
+      "location": "Argentina",
+      "start_date": "2018-06-01",
+      "end_date": "2018-10-01",
+      "period": "2018",
+      "still_working": false,
+      "tasks": [
+        "Organized and managed internal documentation"
+      ],
+      "skills_gained": [
+        "Organization",
+        "Attention to detail"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "C Program for Academic Tracking",
+      "year": "2024",
+      "description": "Developed a C-based application to track academic records, register grades and check course prerequisites."
+    },
+    {
+      "name": "AI-Based Job Application Agent",
+      "year": "2025 - Present",
+      "description": "Building an AI-driven tool to automate and optimize job application workflows using local LLMs and a Chrome extension."
+    }
+  ],
+
+  "skills": [
+    "Technical troubleshooting",
+    "Equipment operation and maintenance",
+    "Process monitoring",
+    "C programming",
+    "Problem solving",
+    "Adaptability",
+    "Teamwork",
+    "Leadership and staff training",
+    "Customer service under pressure",
+    "Bilingual communication",
+    "HTML",
+    "CSS",
+    "Microsoft Office",
+    "Fast learner"
+  ],
+
+  "languages": {
+    "Spanish": "Native",
+    "English": "Fluent"
+  },
+
+  "important_rules": [
+    "The degree name must always be written as Biomedical Engineering.",
+    "Never replace Biomedical Engineering with similar terms.",
+    "Never invent companies, roles or achievements.",
+    "Never modify official names of degrees or institutions.",
+    "Do not use placeholders such as [insert here]."
+  ]
+}
