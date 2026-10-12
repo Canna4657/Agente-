@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Agent</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      width: 300px;
+      background: #0f0f0f;
+      color: #e0e0e0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      padding: 16px 20px;
+      border-bottom: 1px solid #2a2a4a;
+    }
+
+    header h1 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #a78bfa;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      font-size: 11px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #a0a0b0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px 10px;
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 6px;
+      color: #e0e0e0;
+      font-size: 13px;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+    }
+
+    select:focus { outline: 1px solid #7c3aed; }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      color: white;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .btn-secondary {
+      background: #1a1a2e;
+      color: #a78bfa;
+      border: 1px solid #2a2a4a;
+    }
+
+    .btn-secondary:hover { background: #2a2a4a; }
+
+    #status {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      min-height: 18px;
+      transition: color 0.2s;
+    }
+
+    #status.success { color: #34d399; }
+    #status.error { color: #f87171; }
+    #status.working { color: #fbbf24; }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: #1a1a2e;
+      border-radius: 4px;
+      overflow: hidden;
+      display: none;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7c3aed, #4f46e5);
+      width: 0%;
+      transition: width 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #2a2a4a;
+    }
+
+    .tools-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tools-row .btn {
+      flex: 1;
+      font-size: 11px;
+      padding: 8px 6px;
+    }
+
+    footer {
+      padding: 10px 20px;
+      border-top: 1px solid #1a1a2e;
+      text-align: center;
+      font-size: 10px;
+      color: #444;
+    }
+
+    .server-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #888;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #444;
+      flex-shrink: 0;
+    }
+
+    .dot.online { background: #34d399; }
+    .dot.offline { background: #f87171; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🤖 Job Agent</h1>
+    <p>AI-powered form filler — Pedro Cannavo</p>
+  </header>
+
+  <div class="body">
+
+    <!-- Server status -->
+    <div class="server-status">
+      <div class="dot" id="serverDot"></div>
+      <span id="serverLabel">Checking server...</span>
+    </div>
+
+    <!-- Language selector -->
+    <div class="field-group">
+      <label>Response Language</label>
+      <select id="language">
+        <option value="English">🇬🇧 English</option>
+        <option value="Spanish">🇦🇷 Spanish</option>
+      </select>
+    </div>
+
+    <!-- Fill form button -->
+    <button class="btn btn-primary" id="fillBtn">
+      ✨ Fill Form
+    </button>
+
+    <!-- Progress -->
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div id="status">Ready</div>
+
+    <div class="divider"></div>
+
+    <!-- Extra tools -->
+    <div class="field-group">
+      <label>Quick Tools</label>
+      <div class="tools-row">
+        <button class="btn btn-secondary" id="coverBtn">📝 Cover Letter</button>
+        <button class="btn btn-secondary" id="analyzeBtn">🔍 Analyze Job</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>Powered by Ollama (llama3) · localhost:5000</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
